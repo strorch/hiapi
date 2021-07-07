@@ -44,6 +44,7 @@ $singletons = array_merge(
     Buildtime::run(include __DIR__ . '/old-bus-request-handling.php'),
     Buildtime::run(include __DIR__ . '/request-handling.php'),
     [
+        \Psr\Http\Server\RequestHandlerInterface::class => \hiapi\Core\Http\Psr15\RequestHandler::class,
         \yii\web\User::class => [
             'identityClass' => \hiapi\Core\Auth\UserIdentity::class,
             'enableSession' => false,
